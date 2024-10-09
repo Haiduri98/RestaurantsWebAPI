@@ -20,8 +20,8 @@ jobs:
         with:
           dotnet-version: 8.0.x
       - name: Restore dependencies
-        run: dotnet restore
+        run: dotnet restore src/Restaurants.API/Restaurants.API.csproj
       - name: Build
-        run: dotnet build --no-restore
+        run: dotnet build src/Restaurants.API/Restaurants.API.csproj --no-restore
       - name: Test
-        run: dotnet test
+        run: dotnet test tests/Restaurants.Application.Tests/Restaurants.Application.Tests.csproj
