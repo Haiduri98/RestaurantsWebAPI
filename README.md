@@ -2,7 +2,7 @@
 
 This is a .NET 8.0 web API for managing restaurants, following the principles of Clean Architecture.
 
-The course covers the development of this .NET 8.0 web API for managing restaurants, following the principles of Clean Architecture, in detail..
+The course covers the development of this .NET 8.0 web API for managing restaurants, following the principles of Clean Architecture, in detail.
 
 - **Check out the Web API** https://restaurants-api-dev-audugwefc4bfefgq.northeurope-01.azurewebsites.net/swagger/index.html
 
