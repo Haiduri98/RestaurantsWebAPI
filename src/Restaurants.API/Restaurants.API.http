@@ -1,0 +1,117 @@
+@host = https://localhost
+@port = 7005
+@accessToken = CfDJ8IJyPqdCD6hJjcE1M5REtCXATkM1yrnl7BdnypVbCKmLawALLnIm810WrCaXSTO5H066WYHQtc5D0-qluGDiwP0xZdgYB9u4CDx0B4Low-7jecxpVFtrNUhTzUOmfdUJTEVjhALLcmli-ZGzXyhqp3Dmkm6rrsY7l6sKAkHmloxEl8-MD6hreTK7oMKQ8X9-dGQJlaDcdKnvRrKmxzmrXga0sRjUtjfAuEwzDgKeVpn31T2_dDjkzeC8kBUVdSfD8R50iDQiUPTBKrfN43D-VQvzFQoAnGcOPw2VcS_6dR4SE3dGHiO2-_AOlZ8dYbHPdZPmnXYR6bKojNaedc48-0DmkptdxuYtTFREZ-S3OQJM0SrOATVq9hFFWzb7w8vLq3zTogT0bSnpvOXmErijntostfmOVAaaN_GpvIPI6V4ddU2OjYBlSZU4aZuMcfqYvnd1818Bq42S-QiSTFGabwblI9mJqI2YmxJsOAldGchgSMvDY236kI-CZr2Tyv36QwyAx_9bMwIOYTskcrjzb1fj102p6qdqGh8uBNf-29EVuLsiN2NrM0_1bYakMZJ4InipIv03ZrSaiG4HyZbt4O1rH2x7ArLB8FeCY41sMiCUX6Dl0PDm_lWGhIVFouwTETaA--GgDqVp_iAqHJ2HBOHCJnYkel-eLSMRMRuKoXEdOGRQmrqqcnCHH8gnlYgfF9vssp38jKl83kmQBhDn9tA_YHCB-8WGgCyXrL4l28gAChbybvAjFwTS85FI7srgWZBgzb7wc6I8d50TQ3GpA74tupSjWxufwQUOunC5eDCo
+
+@Restaurants.API_HostAddress = {{host}}:{{port}}
+@Restaurants = {{host}}:{{port}}
+
+GET {{Restaurants}}/api/Restaurants?searchPhrase=&pageSize=5&pageNumber=2&SortBy=Name&SortDirection=Descending
+Accept: application/json
+
+###
+GET {{Restaurants}}/api/Restaurants?id=1
+Accept: application/json
+
+###
+POST {{Restaurants}}/api/Restaurants
+Authorization: Bearer {{accessToken}}
+Content-Type: application/json
+
+{
+  "Name": "Owners first created restaurant",
+  "Description": "A culinary experience like no other",
+  "Category": "Italian",
+  "HasDelivery": true,
+  "ContactEmail": "info@gourmetdelights.com",
+  "ContactNumber": "555-123-4567",
+  "City": "Metropolis",
+  "Street": "456 Gourmet Avenue",
+  "PostalCode": "54-321"
+}
+
+###
+GET {{Restaurants}}/api/Restaurants/3
+Accept: application/json
+Authorization: Bearer {{accessToken}}
+
+###
+DELETE {{Restaurants}}/api/Restaurants/9
+Accept: application/json
+Authorization: Bearer {{accessToken}}
+
+
+###
+PATCH {{Restaurants}}/api/Restaurants/3
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "Name": "updated named",
+  "Description": "A culinary experience like no other",
+  "Category": "Italian",
+  "HasDelivery": false
+}
+###
+POST {{Restaurants}}/api/Restaurants/6/dishes
+Content-Type: application/json
+
+{
+  "Name": "Haiduris dish",
+  "Description": "A culinary experience like no other",
+  "price": 30.0,
+  "KiloCalories": 233
+}
+###
+GET {{Restaurants}}/api/Restaurants/7/dishes
+Accept: application/json
+Authorization: Bearer {{accessToken}}
+###
+
+
+###
+DELETE {{Restaurants}}/api/Restaurants/7/dishes
+Accept: application/json
+
+
+###
+
+GET {{Restaurants}}/api/restaurants/6/dishes/7
+Accept: application/json
+
+###
+POST {{Restaurants}}/api/identity/register
+Content-Type: application/json
+
+{
+  "email": "user@test.com",
+  "password": "Password1!"
+}
+
+###
+POST {{Restaurants}}/api/identity/login
+Content-Type: application/json
+
+{
+  "email": "admin@test.com",
+  "password": "Password1!"
+}
+###
+
+PATCH {{Restaurants}}/api/identity/user
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "DateOfBirth": "2010-01-22",
+  "Nationality": "French"
+}
+
+###
+POST {{Restaurants}}/api/identity/login
+Content-Type: application/json
+
+{
+  "email": "testuser@test.com",
+  "password": "Password1!"
+}
+###
